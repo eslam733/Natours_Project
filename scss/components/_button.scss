@@ -1,0 +1,90 @@
+.heading--btn{
+    &:link,
+    &:visited{
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: $default-font-size;
+        color: $color-gray;
+        background: $color-white;
+        border-radius: 3rem;
+        padding: 1rem;
+        margin-top: 7rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        transition: box-shadow .3s;
+        transition: transform .3s;
+        animation: movebottom .4s 1s;
+        animation-fill-mode: backwards;
+        position: relative;
+    }
+
+    &::after{
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background: $color-white;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        border-radius: 3rem;
+        transition: all .4s;
+    }
+
+    &:hover{
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+        &::after{
+            opacity: 0;
+            transform: scale(1.5, 1.7);
+        }
+    }
+    
+    &:active{
+        transform: translateY(.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    }
+}
+
+.secondry-btn{
+    &:link,
+    &:visited{
+        color: $color-primary;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        display: inline-block;
+        transition: all .2s;
+        padding: .5rem;
+        font-weight: 700;
+        font-size: $default-font-size;
+    }
+
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 1rem 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active{
+        transform: translateY(0);
+    }
+}
+
+.tertiary__btn{
+    &:link,
+    &:visited{
+        margin-top: -1rem;
+        background: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    }
+
+    &::after{
+        content: "";
+        background: $color-primary;
+    }
+}
